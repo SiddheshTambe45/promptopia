@@ -6,6 +6,9 @@ import { useRouter } from 'next/navigation';
 import Profile from '@components/Profile';
 import axios from 'axios';
 
+// This ensures the page only renders dynamically on the client
+export const dynamic = 'force-dynamic';
+
 const MyProfile = () => {
 
   const {data: session} = useSession();
