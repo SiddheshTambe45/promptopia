@@ -5,6 +5,9 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import Form from '@components/Form';
 import axios from 'axios';
 
+// Disable static rendering to ensure CSR
+export const dynamic = 'force-dynamic';
+
 const UpdatePrompt = () => {
 
     const router = useRouter();
