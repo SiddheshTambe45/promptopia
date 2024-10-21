@@ -5,6 +5,8 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import Form from '@components/Form';
 import axios from 'axios';
 
+// Force the page to use dynamic rendering (client-side only)
+export const dynamic = 'force-dynamic';
 
 const UpdatePrompt = () => {
 
@@ -55,7 +57,6 @@ const UpdatePrompt = () => {
     },[promptId])
 
   return (
-      <Suspense fallback={<div>Loading...</div>}>
         <Form
         type="Edit"
         post={post}
@@ -63,7 +64,6 @@ const UpdatePrompt = () => {
         submitting={submitting}
         handleSubmit={updatePrompt}
       />
-      </Suspense>
   )
 }
 
