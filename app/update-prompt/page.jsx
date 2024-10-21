@@ -1,3 +1,5 @@
+"use client";
+
 // 'use client';
 
 // import {Suspense, useEffect, useState} from 'react';
@@ -69,7 +71,6 @@
 
 // export default UpdatePrompt;
 
-"use client";
 
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
