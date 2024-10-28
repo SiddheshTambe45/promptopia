@@ -32,7 +32,6 @@ const MyProfile = () => {
         console.log(error);
       }
     }
-    // router.push(`/delete-prompt?id=${post._id}`);
   }
 
   useEffect(()=>{

@@ -38,6 +38,12 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete, textHighli
     );
   };
 
+  const viewProfile = () => {
+    if (post.creator._id === session?.user.id) return router.push('/profile');
+
+    router.push(`/profile/${post.creator._id}?name=${post.creator.userName}`);
+  }
+
   // Get the prompt text (with truncation if necessary)
   const displayPrompt = post.prompt.length > 150 ? `${post.prompt.slice(0, 150)}...` : post.prompt;
 
@@ -51,6 +57,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete, textHighli
             width={40}
             height={40}
             className='rounded-full object-contain'
+            onClick={viewProfile}
           />
           <div className='flex flex-col'>
             <h3 className='font-satoshi font-semibold text-gray-900'>{post.creator.userName}</h3>
