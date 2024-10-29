@@ -60,8 +60,8 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete, textHighli
             onClick={viewProfile}
           />
           <div className='flex flex-col'>
-            <h3 className='font-satoshi font-semibold text-gray-900'>{post.creator.userName}</h3>
-            <p className='font-inter text-sm text-gray-500'>{post.creator.email}</p>
+            <h3 className='font-satoshi font-semibold text-gray-900' onClick={viewProfile} >{post.creator.userName}</h3>
+            <p className='font-inter text-sm text-gray-500' onClick={viewProfile} >{post.creator.email}</p>
           </div>
         </div>
 

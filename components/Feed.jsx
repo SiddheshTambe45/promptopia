@@ -44,6 +44,19 @@ const Feed = () => {
     setFilteredPosts(filtered);
   }
 
+  const handleTagClick = async(e) => {
+    const value = e.toLowerCase();
+    setSearchText(value);
+
+    let filtered = posts.filter((post) => {
+      return (
+        post.tag.toLowerCase().includes(value)
+      );
+    });
+
+    setFilteredPosts(filtered);
+  }
+
   useEffect(()=>{
     const fetchPosts = async() => {
       const response = await axios.get('/api/prompt');
@@ -61,7 +74,7 @@ const Feed = () => {
 
       <PromptCardList 
         data={filteredPosts.length > 0 ? filteredPosts : posts}
-        handleTagClick={()=>{}}
+        handleTagClick={handleTagClick}
         textHighlight={searchText}
       />
     </section>
